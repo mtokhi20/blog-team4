@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import {Authors} from "../component/authors";
+import {Authors} from "../component/Authors";
 import { useAuthors } from "../hook/useAuthors";
 
 export function AuthorsPage() {

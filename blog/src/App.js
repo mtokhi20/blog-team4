@@ -1,15 +1,17 @@
 
-import {AuthorsPage} from './pages/AuthorsPage';
-import { Link, Route, Routes, useParams } from "react-router-dom";
-import {useAuthor} from "./hook/useAuthor";
-import {Authorpost} from "./component/Authorposts"
+import { Route, Routes } from "react-router-dom";
+import {Home} from './pages/home';
+import {AuthorDetails} from "./pages/authorDetailsPage";
+import {PostDetailsPage} from "./pages/postDetailsPage";
+
 function App() {
   
   return (
 
     <Routes>
-      <Route path="/" element={<AuthorsPage />} />
-      <Route path='/authors/:id' element={<Authorpost authorid={useParams()}/>}/>
+      <Route path="/" element={<Home/>} />
+      <Route path="/authors/:authorid" element={<AuthorDetails/>}/>
+      <Route path="/posts/:postid" element={<PostDetailsPage/>}/>
     </Routes>
     
   );

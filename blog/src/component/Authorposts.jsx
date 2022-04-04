@@ -1,13 +1,18 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {PostsData} from "./PostsData";
 
-export function Authorpost({Key,AuthorData}){
+export function Authorposts({AuthorData,PostsList}){
 
     return(
-        <div>
-           <h2>{AuthorData}</h2>
-
-        </div>
+        <>
+           <h1>Author {AuthorData.id} Data:</h1>
+           <h2>{AuthorData.name}</h2>
+           <h2>{AuthorData.email}</h2>
+           <h2>{AuthorData.phone}</h2>
+           <h2>{AuthorData.website}</h2>
+           <h1>Author's Posts List:</h1>
+           {
+               PostsList.map((Post) => <PostsData key={Post.id} Post={Post}/>)
+           }
+        </>
     );
-
 }

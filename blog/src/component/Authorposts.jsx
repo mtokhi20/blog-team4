@@ -3,7 +3,7 @@ import {PostsData} from "./PostsData";
 export function Authorposts({AuthorData,PostsList}){
 
     return(
-        <>
+        <> 
            <h1>Author {AuthorData.id} Data:</h1>
            <h2>{AuthorData.name}</h2>
            <h2>{AuthorData.email}</h2>

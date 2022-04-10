@@ -14,6 +14,6 @@ export function PostDetailsPage(){
   const commentsList= usePostComments(postid);
 
   return(
-      <PostDetails postData={postData} commentsList={commentsList}/>
+      <PostDetails key={postData.id} postData={postData} commentsList={commentsList}/>
   );
 }

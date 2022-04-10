@@ -1,18 +1,20 @@
 //gits a list of posts from the API
 
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
+import {postsReducer} from "../Redux/reducerFunctions";
+import {postsState} from "../Redux/states";
 
 const postsUrl = "https://jsonplaceholder.typicode.com/posts";
 
 export function usePosts() {
-  
-  const [postsList, setPostsList] = useState([]);
-   
+
+  const [state,dispatch]=useReducer(postsReducer,postsState);
+
   useEffect(() => {
     fetch(postsUrl)
       .then((response) => response.json())
-      .then((json) => setPostsList(json));
+      .then((json) => dispatch({type:"fetched",payload:json}));
   }, []);
-    
-  return postsList;
+  
+  return state.postsList;
 }

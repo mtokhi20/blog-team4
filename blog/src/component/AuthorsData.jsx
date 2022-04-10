@@ -6,7 +6,7 @@ export function AuthorsData({ Author }) {
     <>
       <h2>{Author.id} {Author.name}</h2>
       <button onClick={() => {
-          console.log(`id from home page is ${Author.id}`);
+         // console.log(`id from home page is ${Author.id}`);
           navigate(`/authors/${Author.id}`);
         }}>View Author's Details and Posts</button> 
     </>

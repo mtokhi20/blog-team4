@@ -23,7 +23,7 @@ export function CreatePostModal({authorid}){
         })
         .then(response => response.json())
         .then(json => {
-          console.log('response: ' + JSON.stringify(json));
+          console.log('response: ' + JSON.stringify(json)); //to insure successful Post simulation to the API
         })
     },[authorid]);
 

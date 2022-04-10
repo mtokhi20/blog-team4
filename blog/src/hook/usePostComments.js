@@ -1,20 +1,20 @@
 //gits a list of comments for a specific post from the API
 
-import { useEffect, useState } from "react";
+import { useEffect, useReducer} from "react";
+import {commentsReducer} from "../Redux/reducerFunctions";
+import {commentsState} from "../Redux/states";
 
 const commentUrl = "https://jsonplaceholder.typicode.com/posts";
 
 export function usePostComments(postid) {
   
-  const [commentsList, setCommentsList] = useState([]);
+  const [state,dispatch] = useReducer(commentsReducer,commentsState);
   
-
   useEffect(() => {
     fetch(`${commentUrl}/${postid}/comments`)
       .then((response) => response.json())
-      .then((json) => {
-        setCommentsList(json);});
+      .then((json) => {dispatch({type:"fetched",payload:json})});
   }, [postid]);
 
-  return commentsList;
+  return state.commentsList;
 }

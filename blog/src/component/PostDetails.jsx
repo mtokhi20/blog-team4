@@ -2,8 +2,8 @@
 
 export function PostDetails({postData,commentsList}){
 
-    console.log("from Post Details component");
-    console.log(commentsList);
+    //console.log("from Post Details component");
+    //console.log(commentsList);
     return(
         <>
            <h1>Post {postData.id} Data:</h1>
